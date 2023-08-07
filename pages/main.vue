@@ -1,12 +1,33 @@
 <template>
     <div>
       <!-- <h1>메인페이지</h1> -->
-      <p>넉스트시작하기</p>
+      <p>메인페이지</p>
+      <div>{{ products }}</div>
     </div>
   </template>
   
   <script>
-  export default {}
+  import axios from 'axios';
+
+  export default {
+    data(){
+      return {
+        products: [],
+      }
+    },
+
+
+
+    async created(){
+      const response = await axios.get('http://localhost:3000/products');
+      console.log(response)
+      this.products = response.data
+    }
+    // created 를 사용 시 빈배열이 먼저 화면에 그려지는 것을 확인할 수 있다.
+    // 이러한 단점을 보완하기위해 
+    // nuxt에서 제공하는것을 알아보자.
+
+  }
   </script>
   
   <style></style>

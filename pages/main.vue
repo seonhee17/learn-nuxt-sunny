@@ -2,30 +2,47 @@
     <div>
       <!-- <h1>메인페이지</h1> -->
       <p>메인페이지</p>
-      <div>{{ products }}</div>
+      <div>
+        <ul>
+          <!-- key 사용 이유
+            Vue에서 개별 DOM 노드들을 추적하고 기존 엘리먼트를 재사용, 
+             재정렬하기 위해서 v-for의 각 항목들에 고유한 key 속성을 제공해야 합니다.
+          -->
+          <li v-for="product in products" :key="product.id">
+            {{ product }}
+          </li>
+        </ul>
+      </div>
     </div>
   </template>
   
   <script>
   import axios from 'axios';
 
+
   export default {
-    data(){
-      return {
-        products: [],
-      }
-    },
-
-
-
-    async created(){
+   
+    async asyncData(){
       const response = await axios.get('http://localhost:3000/products');
       console.log(response)
-      this.products = response.data
-    }
+      const products = response.data
+      return { products }
+    },
+    // data(){
+    //   return {
+    //     products: [],
+    //   }
+    // },
+    // async created() {},
+
     // created 를 사용 시 빈배열이 먼저 화면에 그려지는 것을 확인할 수 있다.
     // 이러한 단점을 보완하기위해 
     // nuxt에서 제공하는것을 알아보자.
+    
+    // 1.asyncData 사용
+    // 컴포넌트가 생성되기 전에 이전에 호출 
+    // asyncData 의 속성 주의 사항
+    // pages 폴더 안에서만 유효한 인스턴스 속성이라는 것을 기억!!
 
   }
   </script>

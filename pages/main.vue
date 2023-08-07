@@ -1,5 +1,18 @@
 <template>
     <div>
+      <!-- <h1>메인페이지</h1> -->
+      <p>넉스트시작하기</p>
+    </div>
+  </template>
+  
+  <script>
+  export default {}
+  </script>
+  
+  <style></style>
+
+<!-- <template>
+    <div>
         <NuxtLogo />
         <h1>메인페이지</h1>
     </div>
@@ -13,7 +26,7 @@ export default{
         NuxtLogo,
     },
 }
-</script>
+</script> -->
 
 <!-- 
        .nuxt/layouts/default.vue 해당 경로 파일내용

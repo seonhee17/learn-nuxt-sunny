@@ -1,3 +1,4 @@
+
 # learn-nuxt-sunny
 
 ## Build Setup
@@ -66,3 +67,6 @@ More information about the usage of this directory in [the documentation](https:
 This directory contains your Vuex store files. Creating a file in this directory automatically activates Vuex.
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/store).
+=======
+# learn-nuxt-sunny
+>>>>>>> 02ed1bc66f7140f3dac789423a1c2a3ea4835a34

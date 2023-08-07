@@ -1,11 +1,19 @@
 <template>
     <div>
-        <h1>
-            메인페이지
-        </h1>
+        <NuxtLogo />
+        <h1>메인페이지</h1>
     </div>
 </template>
 
+<script>
+import NuxtLogo  from '@/components/NuxtLogo.vue';
+
+export default{
+    components: {
+        NuxtLogo,
+    },
+}
+</script>
 
 <!-- 
        .nuxt/layouts/default.vue 해당 경로 파일내용
@@ -18,7 +26,6 @@
        <router-view></router-view>
        
        /main url은 /.nuxt/router.js에서 경로를 확인 (router설정파일)
-       
        /main URL 이동 시 아래 처럼 DOM이 그려진다.
        <Root>
         <NuxtLoading>

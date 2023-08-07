@@ -88,3 +88,6 @@ sw.*
 
 # Vim swap files
 *.swp
+
+#vscode 폴더 제외
+.vscode/
